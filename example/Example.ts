@@ -5,7 +5,7 @@ class UserProfile {
     @Data(DataType.STRING, STRING_LENGTH_AUTO)
     name: string = "";
 
-    @Data(DataType.STRING, STRING_LENGTH_AUTO)
+    @Data(DataType.STRING, 100)
     email: string = "";
 
     @Data(DataType.INT_8)
@@ -15,7 +15,7 @@ class UserProfile {
     date: number = 0;
 }
 
-const packet: UserProfile = new UserProfile();
+const packet = new UserProfile();
 packet.name = "Lorem Ipsum";
 packet.email = "lorem.ipsum@loremipsum.loremipsum";
 packet.age = 42;
