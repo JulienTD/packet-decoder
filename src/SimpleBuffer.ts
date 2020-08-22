@@ -135,6 +135,8 @@ export class SimpleBuffer {
         for (const key in packet) {
             const metaData = Reflect.getMetadata(metadataKey, packet, key);
 
+            if (metaData == null)
+                continue;
             currentOffset += SimpleBuffer.write(buffer, currentOffset, metaData.dataType, packet[key], metaData.arg1, metaData.arg2);
         }
         return buffer;
@@ -151,6 +153,9 @@ export class SimpleBuffer {
 
         for (const key in packet) {
             const metaData = Reflect.getMetadata(metadataKey, packet, key);
+
+            if (metaData == null)
+                continue;
             const dataRead = SimpleBuffer.read(buffer, currentOffset, metaData.dataType, metaData.arg1, metaData.arg2);
 
             packet[key] = dataRead[0];
@@ -235,6 +240,8 @@ export class SimpleBuffer {
         for (const key in packet) {
             const metaData = Reflect.getMetadata(metadataKey, packet, key);
 
+            if (metaData == null)
+                continue;
             if (metaData.dataType == DataType.INT_BE || metaData.dataType == DataType.INT_LE ||
                 metaData.dataType == DataType.UNSIGNED_INT_BE || metaData.dataType == DataType.UNSIGNED_INT_LE) {
                     packetSize += metaData.arg1;
