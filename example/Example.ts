@@ -1,6 +1,15 @@
 import { SimpleBuffer, Data, DataType, STRING_LENGTH_AUTO} from "../src/SimpleBuffer";
 
-class UserProfile {
+class IPacket {
+
+    @Data(DataType.INT_8)
+    packetId: number = 0;
+}
+
+class UserProfile extends IPacket {
+
+    @Data(DataType.INT_8)
+    packetId: number = 0;
 
     @Data(DataType.STRING, STRING_LENGTH_AUTO)
     name: string = "";
@@ -16,6 +25,7 @@ class UserProfile {
 }
 
 const packet = new UserProfile();
+packet.packetId = 2;
 packet.name = "Lorem Ipsum";
 packet.email = "lorem.ipsum@loremipsum.loremipsum";
 packet.age = 42;
