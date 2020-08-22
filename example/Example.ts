@@ -1,12 +1,6 @@
 import { SimpleBuffer, Data, DataType, STRING_LENGTH_AUTO} from "../src/SimpleBuffer";
 
-class IPacket {
-
-    @Data(DataType.INT_8)
-    packetId: number = 0;
-}
-
-class UserProfile extends IPacket {
+class UserProfile {
 
     @Data(DataType.INT_8)
     packetId: number = 0;

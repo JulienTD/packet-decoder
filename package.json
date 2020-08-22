@@ -1,6 +1,6 @@
 {
   "name": "simple-buffer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "./lib/SimpleBuffer.js",
   "types": "./lib/SimpleBuffer.d.ts",
